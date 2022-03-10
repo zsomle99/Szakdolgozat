@@ -1,3 +1,36 @@
+\Chapter {Tesztelés a gyakorlatban}
+Minden teszt esethez tartoznak különböző információk, amik változnak a cég által használt rendszertől függően. Lehetséges, hogy egy teszt esetet létre tud hozni a kreálója, minden mellék információ megadása nélkül, de általában van néhány alap feltétel is amiket az én programom keretében a \aref{fig:template} kép mutatja be.\\
+
+\label {tab:template}
+\label {tab:testcase}
+\label {tab:successcase}
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[scale=0.86]{images/test_case_template.png}
+	\caption{A teszt esethez tartozó információk.}
+	\label{fig:template}
+\end{figure}
+Minden teszt eset 3 vagy 4 oszlopból áll. Az első oszlopban a lépés sorszáma, a másodikban  maga a lépés van megfogalmazva, a harmadik és negyedik oszlop pedig az elvárt eredményt, illetve a lépéshez tartozó bemenetet tartalmazzák, viszont előfordulhat, hogy a bemeneteket egy másik táblázatban tárolják. Példát erre a \aref{fig:testcase} mutatja be.\\
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.86]{images/test_case.png}
+	\caption{Egy teszt eset teszt lépések nélkül}
+	\label{fig:testcase}
+\end{figure}
+
+
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.86]{images/success_login_test_case.png}
+	\caption{A programhoz tartozó sikeres bejelentkezés teszt esete}
+	\label{fig:successcase}
+\end{figure}
+
+A \aref{fig:successcase} képen látható, az én programomhoz tartozó bejelentkezést tesztelő teszt esetnek a lépéssorozata és a hozzá tartozó bemenetek és az elvárt eredmények.
+
 \Chapter{Megvalósítás}
 
 Ez a fejezet mutatja be a megvalósítás lépéseit.
