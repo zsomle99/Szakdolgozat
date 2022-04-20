@@ -17,11 +17,11 @@ import java.sql.Statement;
 
 public class Jtree extends gui {
 	
-	static DefaultMutableTreeNode node;
+	
 
 	public static void jtree() {
 
-		node = new DefaultMutableTreeNode("SzakdolgozatDB");
+		node = new DefaultMutableTreeNode("INFORMATION_SCHEMA.TABLES");
 		DefaultMutableTreeNode Administrator = new DefaultMutableTreeNode("Administrator");
 		DefaultMutableTreeNode Client = new DefaultMutableTreeNode("Client");
 		DefaultMutableTreeNode Email = new DefaultMutableTreeNode("Email");
@@ -156,8 +156,8 @@ public class Jtree extends gui {
 		DefaultMutableTreeNode root = (DefaultMutableTreeNode) tree.getModel().getRoot();
 		DefaultMutableTreeNode child = new DefaultMutableTreeNode(name);
 		model.insertNodeInto(child, root, root.getChildCount());
+		tree.setSelectionPath(new TreePath(child.getPath()));
 		tree.scrollPathToVisible(new TreePath(child.getPath()));
-		
 		
 	}
 	
@@ -183,7 +183,7 @@ public class Jtree extends gui {
 			model.removeNodeFromParent(childnode);
 		}
 		else
-			T1.setText("Not a child node, please use Remove Node to delete this node!");
+			logArea.append("Not a child node, please use Remove Node to delete this node! " + formatter.format(date) + "\n");
 	}
 
 	public static int ChildNodeCounter() {
@@ -215,11 +215,12 @@ public class Jtree extends gui {
 					return;
 
 				Object nodeInfo = node.getUserObject();
-				if (node.isLeaf()) {
-					System.out.println(node.toString());
-					jdbc("select * from " + node.getParent().toString(), nodeInfo.toString());
-				} else if (node.isNodeAncestor(node))
-					Jdbc.JdbcNodeCounter("select * from " + node.toString(), "Select");
+				
+				if(node.isNodeAncestor(node))
+					if(node.isLeaf())
+						jdbc("select * from " + node.getParent().toString(), nodeInfo.toString());
+					else
+						Jdbc.JdbcNodeCounter("select * from " + node.toString(), "Select");		
 			}
 
 		};
@@ -242,9 +243,8 @@ public class Jtree extends gui {
 				String name = "";
 				while (rs.next()) {
 					name = name + rs.getString(column) + ",  ";
-					T1.setText(name);
-
 				}
+				logArea.append(name + formatter.format(date) + "\n");
 			} catch (SQLException e) {
 				throw new Error("Problem", e);
 			} finally {

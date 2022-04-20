@@ -4,22 +4,28 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.*;
 
+
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import javax.swing.border.Border;
+import javax.swing.tree.DefaultMutableTreeNode;
 
 public class Successgui extends gui {
 
 	public static void successgui() {
+		
+		node = new DefaultMutableTreeNode("SzakdolgozatDB");
 		SuccessPanel = new JPanel();
 		SuccessFrame = new JFrame();
 		SuccessFrame.setSize(1500, 1000);
+		SuccessFrame.setLocationRelativeTo(null);
 		SuccessFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		SuccessFrame.add(SuccessPanel);
 
@@ -88,57 +94,60 @@ public class Successgui extends gui {
 		AddChildNode.addActionListener(instance);
 		SuccessPanel.add(AddChildNode);
 		
+		
+
+
 		NodeLabel = new JLabel("New Node name");
 		NodeLabel.setBounds(400, 50, 200, 25);
+		NodeLabel.setVisible(false);
 		SuccessPanel.add(NodeLabel);
-		
+
 		NodeLabel2 = new JLabel("Additional Node name");
 		NodeLabel2.setBounds(400, 150, 200, 25);
 		NodeLabel2.setVisible(false);
 
 		SuccessPanel.add(NodeLabel2);
-		
+
 		NodeLabel3 = new JLabel("Additional Node name");
 		NodeLabel3.setBounds(400, 230, 200, 25);
 		NodeLabel3.setVisible(false);
 		SuccessPanel.add(NodeLabel3);
-		
+
 		NodeLabel4 = new JLabel("Additional Node name");
 		NodeLabel4.setBounds(400, 310, 200, 25);
 		NodeLabel4.setVisible(false);
 		SuccessPanel.add(NodeLabel4);
-		
+
 		NodeLabel5 = new JLabel("Additional Node name");
 		NodeLabel5.setBounds(400, 390, 200, 25);
 		NodeLabel5.setVisible(false);
 		SuccessPanel.add(NodeLabel5);
-		
+
 		AdditionalNodeLabel = new JLabel("Do you want to add more nodes?");
-		AdditionalNodeLabel.setBounds(400,120,200,25);
+		AdditionalNodeLabel.setBounds(400, 120, 200, 25);
+		AdditionalNodeLabel.setVisible(false);
 		SuccessPanel.add(AdditionalNodeLabel);
-		
-		
-		
-		
+
 		Tnode = new JTextField(20);
 		Tnode.setBounds(400, 80, 400, 40);
+		Tnode.setVisible(false);
 		SuccessPanel.add(Tnode);
-		
+
 		Tnode2 = new JTextField(20);
 		Tnode2.setBounds(400, 175, 400, 40);
 		Tnode2.setVisible(false);
 		SuccessPanel.add(Tnode2);
-		
+
 		Tnode3 = new JTextField(20);
 		Tnode3.setBounds(400, 255, 400, 40);
 		Tnode3.setVisible(false);
 		SuccessPanel.add(Tnode3);
-		
+
 		Tnode4 = new JTextField(20);
 		Tnode4.setBounds(400, 335, 400, 40);
 		Tnode4.setVisible(false);
 		SuccessPanel.add(Tnode4);
-		
+
 		Tnode5 = new JTextField(20);
 		Tnode5.setBounds(400, 415, 400, 40);
 		Tnode5.setVisible(false);
@@ -178,14 +187,26 @@ public class Successgui extends gui {
 			}
 		});
 		SuccessPanel.add(Checkbox);
+		
+		
 
 		BackButton.setVisible(false);
 
 		SuccessPanel.setLayout(null);
 
 		T1 = new JTextField();
-		T1.setBounds(0, 700, 1300, 265);
+		T1.setBounds(0, 832, 1300, 132);
 		SuccessPanel.add(T1);
+		
+		logArea = new JTextArea();
+		logArea.setBounds(0,700,1300,133);
+		SuccessPanel.add(logArea);
+		
+		scrollPane = new JScrollPane(logArea);
+		scrollPane.setBounds(0,700,1300,133);
+		SuccessPanel.add(scrollPane);
+		
+		
 
 		szakdolgozat.Jtree.jtree();
 
@@ -194,6 +215,9 @@ public class Successgui extends gui {
 	}
 
 	public void actionPerformed(ActionEvent evt) {
+		parentNode = new DefaultMutableTreeNode("parent");
+		childNode = new DefaultMutableTreeNode("child");
+		
 		if (evt.getSource() == NewParentNode) {
 			NewParentNode.setVisible(false);
 			NewChildNode.setVisible(false);
@@ -203,8 +227,12 @@ public class Successgui extends gui {
 			GetInfo.setVisible(true);
 			AddNode.setVisible(true);
 			Checkbox.setVisible(true);
-
+			NodeLabel.setVisible(true);
+			Tnode.setVisible(true);
+			AdditionalNodeLabel.setVisible(true);
+			AdditionalNodeLabel.setText("Do you want to add child nodes? ");
 			
+
 
 		} else if (evt.getSource() == NewChildNode) {
 			NewParentNode.setVisible(false);
@@ -214,8 +242,11 @@ public class Successgui extends gui {
 			BackButton.setVisible(true);
 			GetInfo.setVisible(true);
 			AddChildNode.setVisible(true);
+			AddChildNode.setBounds(600,500,200,100);
 			Checkbox.setVisible(true);
-			
+			AdditionalNodeLabel.setText("Do you want to add more nodes?");
+			NodeLabel.setVisible(true);
+			Tnode.setVisible(true);
 
 		} else if (evt.getSource() == RemoveParentNode) {
 			Jtree.removeNode();
@@ -231,6 +262,7 @@ public class Successgui extends gui {
 			BackButton.setVisible(false);
 			GetInfo.setVisible(false);
 			AddNode.setVisible(false);
+			AddChildNode.setVisible(false);
 			resetLabel();
 
 		} else if (evt.getSource() == RunQueryButton) {
@@ -248,114 +280,92 @@ public class Successgui extends gui {
 			Tnode3.setEditable(true);
 			Tnode4.setEditable(true);
 			Tnode5.setEditable(true);
-			if (Checkbox.isSelected()) {
-				temp = Tnode.getText();
-				temp2 = Tnode2.getText();
-				temp3 = Tnode3.getText();
-				temp4 = Tnode4.getText();
-				temp5 = Tnode5.getText();
-				Tnode.setText("");
-				Tnode2.setText("");
-				Tnode3.setText("");
-				Tnode4.setText("");
-				Tnode5.setText("");
 
-			} else {
-				temp = Tnode.getText();
-				Tnode.setText("");
-				Tnode2.setText("");
-				Tnode3.setText("");
-				Tnode4.setText("");
-				Tnode5.setText("");
-
-			}
+			temp = Tnode.getText();
+			temp2 = Tnode2.getText();
+			temp3 = Tnode3.getText();
+			temp4 = Tnode4.getText();
+			temp5 = Tnode5.getText();
+			Tnode.setText("");
+			Tnode2.setText("");
+			Tnode3.setText("");
+			Tnode4.setText("");
+			Tnode5.setText("");
 
 		} else if (evt.getSource() == AddNode) {
-			if (Checkbox.isSelected()) {
-				if (temp.equals("")) {
-					T1.setText("Empty name field, node won't be added");
-				} else
-					Jtree.newParentNode(temp);
-				temp = "";
-				if (temp2.equals("")) {
-					T1.setText("Empty name field, node won't be added");
-				} else
-					Jtree.newParentNode(temp2);
-				temp2 = "";
-				if (temp3.equals("")) {
-					T1.setText("Empty name field, node won't be added");
-				} else
-					Jtree.newParentNode(temp3);
-				temp3 = "";
-				if (temp4.equals("")) {
-					T1.setText("Empty name field, node won't be added");
-				} else
-					Jtree.newParentNode(temp4);
-				temp4 = "";
-				if (temp5.equals("")) {
-					T1.setText("Empty name field, node won't be added");
-				} else
-					Jtree.newParentNode(temp5);
-				temp5 = "";
-
-			} else if (temp.equals("")) {
-				T1.setText("Empty name field, node won't be added");
-			} else
+			if (temp.equals("")) {
+				logArea.append("Empty name field, node won't be added" + formatter.format(date)+ "\n");
+			} else {
+				AddChildNode.setVisible(true);
+				AddChildNode.setBounds(800,500,200,100);
+				NodeLabel.setText("New Child name");
 				Jtree.newParentNode(temp);
-
-		} else if (evt.getSource() == AddChildNode) {
-
+				parentNode.setUserObject(temp);
+				childNode.setUserObject(temp);
+				parentNode.add(childNode);
+			} 
+				
+		}	else if (evt.getSource() == AddChildNode) {
+		
+			temp = "";
 			if (Checkbox.isSelected()) {
 				if (temp.equals("")) {
-					T1.setText("Empty name field, node won't be added");
+					logArea.append("Empty name field, node won't be added" + formatter.format(date)+ "\n");
 				} else
 					Jtree.newChildNode(temp);
 				if (temp2.equals("")) {
-					T1.setText("Empty name field, node won't be added");
+					logArea.append("Empty name field, node won't be added" + formatter.format(date)+ "\n");
 				} else
 					Jtree.newChildNode(temp2);
 				if (temp3.equals("")) {
-					T1.setText("Empty name field, node won't be added");
+					logArea.append("Empty name field, node won't be added" + formatter.format(date)+ "\n");
 				} else
 					Jtree.newChildNode(temp3);
 				if (temp4.equals("")) {
-					T1.setText("Empty name field, node won't be added");
+					logArea.append("Empty name field, node won't be added" + formatter.format(date)+ "\n");
 				} else
 					Jtree.newChildNode(temp4);
 				if (temp5.equals("")) {
-					T1.setText("Empty name field, node won't be added");
+					logArea.append("Empty name field, node won't be added" + formatter.format(date)+ "\n");
 				} else
 					Jtree.newChildNode(temp5);
 
 			} else if (temp.equals("")) {
-				T1.setText("Empty name field, node won't be added");
+				logArea.append("Empty name field, node won't be added" + formatter.format(date)+ "\n");
 			} else
 				Jtree.newChildNode(temp);
 
 		}
 
 	}
-public static void resetLabel() {
-		
+
+	public static void resetLabel() {
+
 		NodeLabel2.setVisible(false);
 		NodeLabel3.setVisible(false);
 		NodeLabel4.setVisible(false);
 		NodeLabel5.setVisible(false);
 
+		Checkbox.setVisible(false);
+
 		Tnode2.setVisible(false);
 		Tnode3.setVisible(false);
 		Tnode4.setVisible(false);
 		Tnode5.setVisible(false);
-		
+
 		Tnode.setText("");
 		Tnode2.setText("");
 		Tnode3.setText("");
 		Tnode4.setText("");
 		Tnode5.setText("");
-		
-		Checkbox.setSelected(false);
-	}
 
+		Checkbox.setSelected(false);
+		AddNode.setVisible(false);
+		AddChildNode.setVisible(false);
+		GetInfo.setVisible(false);
+		
+		NodeLabel.setText("New Node name");
+	}
 
 	public static class RoundBtn implements Border {
 		private int r;

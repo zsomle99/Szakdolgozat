@@ -2,6 +2,8 @@ package szakdolgozat;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -10,8 +12,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
 
 public class gui implements ActionListener {
 
@@ -22,6 +26,8 @@ public class gui implements ActionListener {
 	protected static JTextField Tnode3;
 	protected static JTextField Tnode4;
 	protected static JTextField Tnode5;
+	
+	protected static JTextArea logArea;
 	
 	protected static JPasswordField loginpasswordtext;
 	
@@ -38,6 +44,10 @@ public class gui implements ActionListener {
 	protected static JLabel NodeLabel4;
 	protected static JLabel NodeLabel5;
 	protected static JLabel AdditionalNodeLabel;
+	
+	static DefaultMutableTreeNode node;
+	static DefaultMutableTreeNode parentNode;
+	static DefaultMutableTreeNode childNode;
 	
 
 	protected static JPanel loginPanel;
@@ -59,12 +69,14 @@ public class gui implements ActionListener {
 	protected static JButton AddChildNode;
 	protected static JButton AddNode;
 
+
 	protected static JFrame loginFrame;
 	protected static JFrame SuccessFrame;
 
 	protected static JFrame JtreeFrame;
 
 	protected static JScrollPane sp;
+	protected static JScrollPane scrollPane;
 
 	protected static JTree tree;
 	
@@ -73,16 +85,20 @@ public class gui implements ActionListener {
 	protected static String temp3 = "";
 	protected static String temp4 = "";
 	protected static String temp5 = "";
-
-
-
+	
+	protected static Date date = new Date();
+	
+	protected static SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyy HH:mm:ss");
+	
 	protected static int nodecount;
+
 
 	public static void logingui() {
 
 		loginPanel = new JPanel();
 		loginFrame = new JFrame();
 		loginFrame.setSize(350, 200);
+		loginFrame.setLocationRelativeTo(null);
 		loginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		loginFrame.add(loginPanel);
 
@@ -120,8 +136,9 @@ public class gui implements ActionListener {
 
 	public static void main(String[] args) {
 
-		// logingui();
-		Successgui.successgui();
+		logingui();
+
+
 
 	}
 
@@ -136,11 +153,6 @@ public class gui implements ActionListener {
 			LoginSuccessLabel.setText("Login successful");
 			loginFrame.setVisible(false);
 			Successgui.successgui();
-		} else if (user.equals("admin") && password.equals("admin")) {
-			LoginSuccessLabel.setText("Login successful");
-			loginFrame.setVisible(false);
-			Successgui.successgui();
-
 		} else
 			LoginSuccessLabel.setText("Login failed");
 	}

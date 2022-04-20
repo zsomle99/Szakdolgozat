@@ -32,17 +32,18 @@ public class Jdbc extends gui {
 						while (rs.next()) {
 							for (int i = 1; i < nodecount + 1; i++) {
 								name = name + rs.getString(i) + " | ";
-								T1.setText(name);
+								
 							}
 						}
+						logArea.append(name + formatter.format(date) + "\n");
 					} else {
 						while (rs.next()) {
 							for (int i = 1; i < rs.getMetaData().getColumnCount() + 1; i++) {
 								name = name + rs.getString(i) + ", ";
 								name = name + "\n";
-								T1.setText(name);
+								
 							}
-						}
+						} logArea.append(name + formatter.format(date) + "\n");
 					}
 
 					break;
@@ -50,33 +51,34 @@ public class Jdbc extends gui {
 					int rownumber;
 					rownumber = stmt.executeUpdate(sql);
 					if (rownumber > 0) {
-						T1.setText(rownumber + "row(s) have been updated");
+						logArea.append(rownumber + "row(s) have been updated" + formatter.format(date) + "\n");
 					} else
-						T1.setText("No changes were made");
+						logArea.append("No changes were made" + formatter.format(date) + "\n");
 					break;
 
-				case ("Remove"):
+				case ("Delete"):
 					int number;
 					number = stmt.executeUpdate(sql);
 					if (number > 0) {
-						T1.setText(number + "row(s) have been updated");
-					}
+						logArea.append(number + "row(s) have been updated" + formatter.format(date) + "\n");
+					} else
+						logArea.append("No changes were made" + formatter.format(date) + "\n");
 					break;
 				case ("Alter"):
 					int number2;
 					number2 = stmt.executeUpdate(sql);
-					if (number2 > 0) {
-						T1.setText(number2 + "row(s) have been updated");
+					if (number2 == 0) {
+						logArea.append("The table was altered" + formatter.format(date) + "\n");
 					} else
-						T1.setText("No changes were made");
+						logArea.append("No changes were made" + formatter.format(date) + "\n");
 					break;
 				case ("Insert"):
 					int number3;
 					number3 = stmt.executeUpdate(sql);
 					if (number3 > 0) {
-						T1.setText(number3 + "row(s) have been updated");
+						logArea.append(number3 + "row(s) have been updated" + formatter.format(date) + "\n");
 					} else
-						T1.setText("No changes were made");
+						logArea.append("No changes were made" + formatter.format(date) + "\n");
 					break;
 
 				case ("Create"):
@@ -84,19 +86,19 @@ public class Jdbc extends gui {
 					number4 = stmt.executeUpdate(sql);
 					if (number4 == 0) {
 						
-						T1.setText("The table was created");
+						logArea.append("The table was created" + formatter.format(date) + "\n");
 					}
 					else
-						T1.setText("Something is wrong");
+						logArea.append("Something is wrong" + formatter.format(date) + "\n");
 					break;
 
 				case ("Drop"):
 					int number5;
 					number5 = stmt.executeUpdate(sql);
 					if (number5 == 0)
-						T1.setText("The table was dropped");
+						logArea.append("The table was dropped" + formatter.format(date) + "\n");
 					else
-						T1.setText("Something is wrong");
+						logArea.append("Something is wrong" + formatter.format(date) + "\n");
 					break;
 
 				}
