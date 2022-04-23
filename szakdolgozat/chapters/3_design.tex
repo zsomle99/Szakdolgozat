@@ -1,0 +1,62 @@
+\Chapter{Tervezés}
+
+A szakdolgozatom lényege a tesztelés bemutatása és az alkalmazott technikák szemléltetése így maga a program ami készül hozzá, kimondottan ilyen céllal lett tervezve is, emiatt inkább kutatás jellegű a dolgozat. Ebben a részben a tesztelés tervezését részletezem illetve egy bővebben beszélek a szisztematikus tesztelésnek a szerepéről.
+\Section{A tesztelés megtervezése}
+Mint a szoftverfejlesztés, maga a tesztelés is egy tervel indul el.
+A tesztelési terv (röviden: tesztterv) összefoglalja a fejlesztés és az üzemeltetés során elvégzendő tesztelési tevékenységeket. A tervezést a következő tényezők tudják befolyásolni:
+\begin{enumerate}
+\item A szervezet tesztstratégiája
+\item A tesztelés irányelvei
+\item A fejlesztési ciklus
+\item Az alkalmazott módszerek
+\item A teszt tárgya
+\item A teszt céljai
+\item A tesztel járó kockázatok
+\item A teszthez tartozó megkötések
+\item A kritikusság
+\item Az elérhető erőforrások
+\item A tesztelhetőség
+\end{enumerate}
+
+Egy projekt, illetve a tesztterv minél későbbi fázisban van annál több információ áll rendelkezésünkre és annál részletesebb tervet tudunk készíteni. A teszttervezést egy dinamikus tevékenység, amit minden fázisban el kell végezni. A teszttevékenységekből kapott információk alapján már jobban bele lehet tekinteni a kockázatokba és esetleges módosításokat lehet végezni ez alapján a tervbe.\\
+A tervezést dokumentálhatják a fő teszttervben és az egyes tesztszintekhez tartozó teszttervekben, mint például a rendszertesztelés, elfogadási tesztelés, vagy a különböző teszttípusokhoz tartozó teszttervekben, mint például a használhatósági tesztelés és a teljesítménytesztelés\cite{syllabus3}.\\
+A teszttervezési tevékenységekhez tartozhatnak és dokumentálhatóak a tervben :
+\begin{itemize}
+\item A kockázatoknak, a tesztelés tárgyának és a céloknak a definiálása
+\item Az általános megközelítés kifejtése
+\item Egy nagyobb leíró rész, arról, hogy ki mit fogunk tesztelni, azt ki fogja tesztelni, milyen erőforrásokra van ehhez szükség és hogyan kell a tevékenységeket végrehajtani
+\item A tesztfelügyelethez és az irányításához a metrikák kiválasztása
+\item A költségvetés meghatározása
+\item A dokumentáció struktúrájának, illetve részletességének a meghatározása
+\item A teszttevékenységek koordinálása, és az életciklusba beépítése
+\item A terv különböző pontjai (elemzés,tervezés,megvalósítás,végrehajtás) ütemezése adott időpontokra, vagy iterációkhoz kötve.
+\end{itemize}
+
+\section {A tesztstratégia és a tesztelési megközelítés}
+
+Maga a tesztstratégia a tesztelési folyamatot mutatja be általános megközelítéssel, többnyire egy szervezet vagy egy termék szintjén.\\
+A következők az általános típusai a tesztstratégiáknak:
+\subsection{Analitikus} Az analitikus megközelítés olyan típusa a tesztstratégiáknak, ahol egy bizonyos tényezőt veszünk középpontba (például kockázat vagy esetleg követelmény) és ez a tényező kerül elemzésre.
+Kockázat alapú tesztelésnél azt jelenti az analitikus megközelítés, hogy az elkészülő teszt eseteket kockázat alapján priorizálják és tervezik meg.
+
+
+\subsection{Modell alapú} Ahogy a neve is mutatja, a teszteket néhány modell alapján készítjük el, amik általában a termék egy jellemzőjére épülnek (például üzleti folyamat, belső szerkezet).	Az állapot modellek, a megbízhatósági növekedés modellek és az üzleti folyamat modellek tudnak példát adni ezekre a modellekre.
+
+
+\subsection{Módszeres} Ez a tesztstratégia a tesztek és tesztfeltételek néhány előre meghatározott halmazát használja szisztematikusan. Ilyen például a fontos minőségi jellemzők listája, vagy a vállalati szintű megjelenés, de a  gyakori hibatípusok csoportjai is ide sorolhatóak.
+
+\subsection{Folyamat szerinti} Ez a fajta stratégia külső szabályok és szabványokon alapul. Ez azt jelenti, hogy a tesztek tervezése, elemzése és megvalósítása ezeken alapul. Ezek a szabványok vagy a szervezet által vagy a szervezetre lettek meghatározva.
+
+\subsection{Irányított} Ezt a stratégiát nagyban befolyásolja a technológiai szakértőktől vagy az érdekelt felektől érkező útmutatás vagy utasítás. Ezek a személyek általában a teszt csapaton, de akár a szervezeten kívüli személyek is lehetnek.
+
+\subsection{Regresszió-kerülő} Az ilyen típusú tesztstratégia hátterében az a vágy áll, hogy elkerüljük a meglévő képességek romlását. Ez a tesztstratégia magában foglalja a meglévő tesztverek (különösen a tesztesetek és tesztadatok) újra felhasználását, a regressziós tesztek széles körű automatizálását és a standard tesztkészleteket\cite{syllabus4}.
+
+\subsection{Reaktív} Az előző stratégiák helyett, ez a típus a tesztelés előre eltervezése helyett, inkább a komponens vagy a rendszer lényegére és a teszt végrehajtása során bekövetkezett eseményekre reagál. Nagyon gyakran a felderítő tesztelést alkalmazzák a reaktív stratégiákban\cite{syllabus4}.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{images/me_logo.png}
+\caption{A Miskolci Egyetem címere.}
+\label{fig:cimer}
+\end{figure}

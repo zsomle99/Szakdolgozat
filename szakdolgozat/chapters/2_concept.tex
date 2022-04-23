@@ -1,0 +1,79 @@
+\Chapter{Koncepció}
+
+\Section{A fejezet célja}
+A tesztelési módszerek csoportosítására több módszer is lehetséges, viszont fontos tudni, hogy optimális esetben többet is használunk a tesztelés különböző szintjein. Én manuális, ad-hoc, szisztematikus és fekete doboz tesztelési módszereket fogok alkalmazni a programomon.\\
+A szakdolgozat folyamán többször is fogom használni a szkript szót. Ez alatt azt a lépéssorozatot értem, amiben le van írva, hogy az adott tesztet, hogyan kell elvégezni, milyen előfeltételek vannak és mi az elvárt eredmény.
+
+\Section{Tartalom és felépítés}
+
+Mielőtt a négy módszerre részletesen kitérnék és szakirodalmakkal, illetve kutatásokkal bővíteném ki, szükségesnek érzem ezeknek a magyarázatát.
+\begin{itemize}
+
+\item Manuális (kézi) tesztelés: A tesztelést a gép helyett egy ember végzi, aki  hibákat keres akár a működésbe, akár egy teszt szkriptbe, de ilyenkor még a szubjektív hibákat is látócső alá lehet venni.
+
+\item Ad-hoc tesztelés: Ad-hoc tesztelés alatt akár a szabad tesztelést is nevezhetjük. Ez a mód igazából nem szab korlátot és utat sem mutat a tesztelő számára. Teljes mértékben a tesztelő kezében van, hogy milyen módszereket használva teszteli az adott szoftvert.
+
+\item Szisztematikus tesztelés: A szisztematikus tesztelés az ad-hoc fordítottja. Ebben a módszertanban egy előre definiált módszerrel és tesztesettel tekintünk a szoftverre és mindig pontosan azt a funkció működését ellenőrizzük amire a teszt eset íródott.
+
+\item Fekete doboz tesztelés: Fekete doboz tesztelés alatt egy olyan módszertant értünk, ahol magát a szoftver belső működését vagy nem ismerjük, vagy ignoráljuk, ugyanis nekünk csak az számít, hogy egy adott bemenetre adott kimenetet kapjunk.
+\end{itemize}
+
+\Section{Tesztelési módszertanok és módszerek}
+A szoftvertesztelés módszertanaival már nagyon sok ember foglalkozott, bár többnyire az elkészült irodalmak egy-egy módszertant említenek specifikusan, vagy talán kettő ellentmondását vagy az együtt használás előnyeit mutatják be. Fontos tudni, hogy minél több módszer kerül használatra egy szoftver tesztelése közbe, annál nagyobb lefedettséget biztosít és annál kisebb lesz az esély arra, hogy hiba marad a programunkba.
+
+\subsection{Manuális tesztelés} A manuális tesztelést tekinthetjük a módszertanok közül a legegyszerűbbnek. Ha valaki a teszteléssel szeretne foglalkozni, mindig ezzel fogja kezdeni és nem feltételezi azt sem a szakma, hogy IT végzettséggel rendelkezzen valaki, elég ha van hozzá affinitása. Természetesen ha valakinek már végzettsége van, az nagyon megkönnyíti a munkát, de így sem elvárható, hogy rögtön egy hét után már önállóan hiba nélkül tudjon dolgozni a tesztelő. A legegyszerűbb módszertannak neveztem az előbb, mégis tudni kell hogy a legszínesebb is tud egyszerre lenni, ugyanis cégenként változik a bevált módszer és a feladatkör.\\
+Az esetek többségében a folyamat úgy zajlik, hogy a tesztelő megkapja a tesztforgatókönyvet a projekt- vagy tesztkoordinátortól, szenior tesztelőtől, amelyben tételesen le van írva, miket kell vizsgálnia, mi az elvárt eredmény, és amennyiben nem a várt eredményt kapja, akkor mi történt. Ez lehet olyan triviális apróság, mint például hogy funkcionális tesztelésnél az adott gombra kattintva nem történik semmi, vagy lefagy a rendszer, nem a megfelelő oldal nyílik meg stb. A tesztelő munkája nem attól izgalmas, hogy nem talál hibát, hanem attól, ha minél többet fedez fel\cite{computerworld}.\\
+A szakma és a módszertan legizgalmasabb része maga a hiba felderítése és nyomozása. 
+\begin{itemize}
+\item Mi az ami a hibát okozza?
+\item Hogy lehet reprodukálni?
+\item A kód melyik részében található?
+\end{itemize}
+Ezeknek a kérdéseknek a megválaszolásával jutunk el oda, hogy a manuális tesztelő megírja a riportot a hibáról és továbbítja a fejlesztőknek.\\
+Ehhez viszont az adott szoftvert, annak funkcióit alaposan ismerni kell (az újat és a régit egyaránt). Ezért a junior manuális tesztelők az első 2-6 hónapban rengeteg dokumentációt olvasnak (ha van), munkájuk nagy részét felületi tesztek teszik ki, hogy minél jobban meg tudják ismerni a rendszereket. Akinek már van elég tapasztalata, annak a napi munka részét képezi a bug-tracking (a felfedezett hiba nyomon követése), a tesztmódszertan kidolgozása, a tesztesetek (újra)definiálása, a tesztforgatókönyv-készítés és a log elemzés is\cite{computerworld}.
+
+
+\subsection{Ad-hoc tesztelés} A manuális tesztelés alatt található módszertanok közül a kevésbé használt, de nem kevésbé hasznos módszertan az ad-hoc tesztelés. Sajnos előfordulhat minden szoftver fejlesztése közben, hogy az előre megírt szkriptek nem fedik le a teljes funkciót, illetve minden apró részletet, mégis ott olyan hiba található, ami a teljes szoftvert működésképtelenné tenné.\\ Pontosan ilyen esetek miatt hasznos az ad-hoc tesztelés, ugyanis a maga szabálytalansága miatt, ezeket az eseteket vizsgálni tudja, viszont az így talált hibák dokumentálása és a hiba reprodukálása nehezebb feladat tud lenni, ugyanis nincs mihez viszonyítani, így ezt a fajta tesztelést a már tapasztaltabb manuális tesztelők szokták végezni. Három nagy módszer található a módszertanba.
+\begin{itemize}
+\item Buddy testing (Haver tesztelésnek fordítható,de általában nem szokták, bent maradjon vagy inkább kiszedjem?) : Két kolléga kölcsönösen dolgozik ugyanazon modul hibáinak azonosításán. Többnyire az egyik a fejlesztői csapatból, a másik pedig a tesztelői csapatból érkezik. A haver-tesztelés segít a tesztelőknek jobb teszteseteket kidolgozni, és a fejlesztőcsapat is idejekorán tud tervmódosításokat végrehajtani. Ez a tesztelés általában az egységtesztelés befejezése után történik\cite{guru99}.
+\item Pair testing (Páros tesztelés) : Két tesztelő kap modulokat, megosztják egymással az ötleteiket, és ugyanazon a gépen dolgoznak a hibák felkutatásán. Az egyik személy elvégezheti a teszteket, a másik pedig jegyzetelheti a megállapításokat. A személyek szerepe lehet tesztelő és firkász a tesztelés során\cite{guru99}.
+\item Monkey testing (Majom tesztelés, hasonló szituáció mint a buddy testingnél) : Véletlenszerűen tesztelje a terméket vagy alkalmazást tesztesetek nélkül, azzal a céllal, hogy tönkretegye a rendszert\cite{guru99}.
+\end{itemize} 
+
+\subsection{Szisztematikus tesztelés} A szisztematikus tesztelés egy nagyon széles körű módszertan, ami minden módszert magába foglal, amit az ad-hoc nem. A kettő módszertan együtt tartalmazza az összes módszert amit manuálisan alkalmazni lehet. Minden olyan módszer ami rendelkezik előre megírt szkripttel az ebbe a kategóriába sorolható. Fontos tudni, hogy az automata tesztelés csak és kimondottan szisztematikus tesztelésnél fordulhat elő, viszont a szisztematikus tesztelés az manuális tesztelés esetében is nagyon gyakori. Ide sorolható az összes fekete és fehér dobozos tesztelési technika. A fekete dobozos technikákra rögtön kitérek a következő szekcióban a fehér dobozosak pedig a következők:
+\begin{itemize}
+\item Utasítástesztelés és - lefedettség
+\item Döntési tesztelés és lefedettség
+\item Az utasítástesztelés és a döntési tesztelés értéke
+\end{itemize}
+Említés szintjén a fehér dobozos tesztelést  \aref{tab:teszt} pontban részletezem.
+\label{tab:sziszt}
+A következő fejezetben részletesebben kitérek arra, milyen szerepe van a tesztelésben és a tervezésben a szisztematikus tesztelésnek.
+
+\subsection{Fekete doboz tesztelés} A fekete doboz teszttechnikák (viselkedési vagy viselkedés alapú technikáknak is nevezzük) a megfelelő
+tesztbázis (pl. formális követelménydokumentumok, specifikációk, használati esetek, felhasználói történetek
+vagy üzleti folyamatok) elemzésén alapulnak. Ezen technikák mind a funkcionális, mind a nem funkcionális
+teszteléshez alkalmasak. A fekete doboz teszttechnikák a tesztelés tárgyának bemeneteire és kimeneteire
+koncentrálnak, a belső szerkezetre történő hivatkozás nélkül.\\
+Ez a módszertan 5 teszttechnikát tartalmaz:
+\begin{itemize}
+\item Ekvivalenciaparticionálás : Ezt a technikát használva, partíciókra osztjuk a letesztelendő feladatokat, és értékeket határozunk meg amik vagy negatívak vagy pozitívak. Ezek alapján az elvárt eredmény változik. Fontos, hogy minden érték csak 1 partícióhoz tartozhat és 1 tesztesetben nem lehet kombinálni több negatív partíciót, ezzel kiszűrve annak az esélyét, hogy 2 hibát 1-nek gondolunk.
+\item Határérték-elemzés : A határérték-elemzés igazából az ekvivalenciapartíció kibővítése, viszont csak numerikus vagy szekvenciális elemeket tartalmazó részeken használható. Ennél a tesztelésnél egy intervallummal rendelkezünk, amikre pozitív elvárt eredményt kapunk és minden másra pedig negatívot. A határértékek mindig ennek az intervallumnak a legkisebb és a legnagyobb eleme.
+\item Döntési tábla tesztelés : Ebben a teszttechnikában táblázatot hozunk létre, aminek a sorait a rendszer követelményei és az eredményezett műveletek alkotják. Minden oszlop egy döntési szabálynak felel meg, ami a feltételek egy olyan egyedi kombinációját definiálja, ami az ehhez a szabályhoz rendelt műveletek végrehajtását eredményezi.
+\item Állapotátmenet tesztelés : A teszttechnika használata közben a tesztelt funkció jelenlegi állapotát, az átmeneti állapotot és a következő állapota alapján kategorizáljuk. Egy állapotból több potenciális állapot lehet például egy jelszó beírása után vagy beenged az oldal vagy nem és ezek az esetek az átmeneti állapotok. Az állapotátmeneti tábla az állapotok közötti összes érvényes és potenciálisan érvénytelen átmenetet, az eseményeket, illetve az érvényes átmenetekhez tartozó végrehajtandó műveleteket ábrázolja. Az állapotátmenet diagramok általában csak az érvényes átmeneteket mutatják és kizárják az érvényteleneket.
+\item Használati eset tesztelés : A tesztek származtathatóak használati esetekből is, amik a szoftverelemekkel történő kölcsönhatások tervezésének speciális módjai. Egyesítik a szoftverfunkciókra vonatkozókövetelményeket. A használati eseteket aktorokhoz (emberi felhasználók, külső hardver, másik komponens vagy rendszer) és tárgyakhoz (a komponens vagy rendszer, amelyre a használati esetet alkalmazzuk) kötjük.
+\end{itemize}\cite{syllabus2}
+
+\Section{Amit csak említés szintjén érdemes szerepeltetni}
+
+Ebben a szekcióban nem tértem ki a fehér doboz és szürke doboz tesztelésre, illetve az automatára sem részletesen, ugyanis ezek nem kerültek alkalmazásra a program készítése és tesztelése során, de egy említést azért megérdemelnek.
+
+\begin{itemize}
+\item Fehér doboz tesztelés: A fehér doboz tesztelés a fekete doboz ellentéte. Ebben a módszertanban ismerjük a szoftver belső felépítését és a teszt esetek megírása közben figyelni kell arra, hogy a bemenet kielégítse az összes elágazás, belső függvény és ciklus követelményeit is.
+\label{tab:teszt}
+
+\item Szürke doboz tesztelés: A szürke doboz tesztelés a fekete és fehér doboz kombinációja. A három módszertan közül ez a legújabb és egyre több helyen használják már. A lényegi különbség, hogy megpróbál egy arany középutat találni a két szélsőséges módszertan között felhasználva a pozitívumokat és kihagyva a negatívumokat.
+
+\item Automata tesztelés: Az automata tesztelés során a gép értékeli ki az eredményt, majd egyértelmű visszajelzést ad arról. Könnyen ismételhetőségre nyújt lehetőséget, rövid idő alatt sok esetet tud vizsgálni és ideális esetben hibázni sem hibázik, viszont nem mindig lehet alkalmazni és a tesztesetet rendkívül pontosan kell megfogalmazni.
+\end{itemize}
+Természetesen ez teljesen saját preferencia és egyik módszert sem merném kijelenteni, hogy jobb a másiknál, de az adott körülmények egyes módszerek használatát egyszerűbbé teszi.
