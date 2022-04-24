@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.12.14)  23 APR 2022 21:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.12.14)  24 APR 2022 12:42
 entering extended mode
 **./dolgozat.tex
 (dolgozat.tex
@@ -934,6 +934,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  (chapters/6_summary.tex
 7. fejezet.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
 ) [28
 
 
@@ -957,12 +977,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 (cover/cimlap.aux) (cover/feladatkiiras.aux) (chapters/1_introduction.aux)
 (chapters/2_concept.aux) (chapters/3_design.aux) (chapters/4_implementation.aux
 ) (chapters/5_test.aux) (chapters/6_summary.aux) (cover/hasznalati.aux))
-Package rerunfilecheck Info: File `dolgozat.out' has not changed.
-(rerunfilecheck)             Checksum: 52487A4978045BD507D575C9AFCDAF15;7126.
+
+Package rerunfilecheck Warning: File `dolgozat.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `dolgozat.out':
+(rerunfilecheck)             Before: 52487A4978045BD507D575C9AFCDAF15;7126
+(rerunfilecheck)             After:  35A8627FC88015B44A64AAC1D8985C8A;7368.
  ) 
 Here is how much of TeX's memory you used:
- 15419 strings out of 478864
- 220575 string characters out of 2863263
+ 15421 strings out of 478864
+ 220597 string characters out of 2863263
  786033 words of memory out of 3000000
  32809 multiletter control sequences out of 15000+600000
  424734 words of font info for 78 fonts, out of 8000000 for 9000
@@ -985,9 +1011,9 @@ ppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1440.pk> <C:\Users\U
 ser\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc2488.pk><F:/tex
 /miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><F:/tex/miktex/fonts/type1/pu
 blic/amsfonts/latxfont/lcircle1.pfb>
-Output written on dolgozat.pdf (36 pages, 578621 bytes).
+Output written on dolgozat.pdf (36 pages, 580815 bytes).
 PDF statistics:
- 1129 PDF objects out of 1200 (max. 8388607)
- 211 named destinations out of 1000 (max. 500000)
+ 1133 PDF objects out of 1200 (max. 8388607)
+ 213 named destinations out of 1000 (max. 500000)
  396 words of extra memory for PDF output out of 10000 (max. 10000000)
 
