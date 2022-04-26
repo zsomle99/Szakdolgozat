@@ -46,23 +46,23 @@ Ehhez viszont az adott szoftvert, annak funkcióit alaposan ismerni kell (az új
 \item Döntési tesztelés és lefedettség
 \item Az utasítástesztelés és a döntési tesztelés értéke
 \end{itemize}
-Említés szintjén a fehér dobozos tesztelés \aref{tab:teszt} pontban megtalálható.
+Említés szintjén a fehér dobozos tesztelés \aref{tab:teszt}-es pontban megtalálható.
 \label{tab:sziszt}
 A következő fejezetben részletesebben kitérek arra, milyen szerepe van a tesztelésben és a tervezésben a szisztematikus tesztelésnek.
 
 \subsection{Fekete doboz tesztelés} A fekete doboz teszttechnikák (viselkedési vagy viselkedés alapú technikáknak is nevezzük) a megfelelő
-tesztbázis (pl. formális követelménydokumentumok, specifikációk, használati esetek, felhasználói történetek
+tesztbázis (pl. formális követelmény dokumentumok, specifikációk, használati esetek, felhasználói történetek
 vagy üzleti folyamatok) elemzésén alapulnak. Ezen technikák mind a funkcionális, mind a nem funkcionális
 teszteléshez alkalmasak. A fekete doboz teszttechnikák a tesztelés tárgyának bemeneteire és kimeneteire
 koncentrálnak, a belső szerkezetre történő hivatkozás nélkül.\\
 Ez a módszertan 5 teszttechnikát tartalmaz:
 \begin{itemize}
-\item Ekvivalencia particionálás : Ezt a technikát használva, partíciókra osztjuk a letesztelendő feladatokat, és értékeket határozunk meg amik vagy negatívak vagy pozitívak. Ezek alapján az elvárt eredmény változik. Fontos, hogy minden érték csak 1 partícióhoz tartozhat és 1 tesztesetben nem lehet kombinálni több negatív partíciót, ezzel kiszűrve annak az esélyét, hogy 2 hibát 1-nek gondolunk.
-\item Határérték-elemzés : A határérték-elemzés igazából az ekvivalenciapartíció kibővítése, viszont csak numerikus vagy szekvenciális elemeket tartalmazó részeken használható. Ennél a tesztelésnél egy intervallummal rendelkezünk, amikre pozitív elvárt eredményt kapunk és minden másra pedig negatívot. A határértékek mindig ennek az intervallumnak a legkisebb és a legnagyobb eleme.
-\item Döntési tábla tesztelés : Ebben a teszttechnikában táblázatot hozunk létre, aminek a sorait a rendszer követelményei és az eredményezett műveletek alkotják. Minden oszlop egy döntési szabálynak felel meg, ami a feltételek egy olyan egyedi kombinációját definiálja, ami az ehhez a szabályhoz rendelt műveletek végrehajtását eredményezi.
-\item Állapotátmenet tesztelés : A teszttechnika használata közben a tesztelt funkció jelenlegi állapotát, az átmeneti állapotot és a következő állapota alapján kategorizáljuk. Egy állapotból több potenciális állapot lehet például egy jelszó beírása után vagy beenged az oldal vagy nem és ezek az esetek az átmeneti állapotok. Az állapotátmeneti tábla az állapotok közötti összes érvényes és potenciálisan érvénytelen átmenetet, az eseményeket, illetve az érvényes átmenetekhez tartozó végrehajtandó műveleteket ábrázolja. Az állapotátmenet diagramok általában csak az érvényes átmeneteket mutatják és kizárják az érvényteleneket.
-\item Használati eset tesztelés : A tesztek származtathatóak használati esetekből is, amik a szoftverelemekkel történő kölcsönhatások tervezésének speciális módjai. Egyesítik a szoftverfunkciókra vonatkozókövetelményeket. A használati eseteket aktorokhoz (emberi felhasználók, külső hardver, másik komponens vagy rendszer) és tárgyakhoz (a komponens vagy rendszer, amelyre a használati esetet alkalmazzuk) kötjük.
-\end{itemize}\cite{syllabus2}
+\item Ekvivalencia particionálás : Ezt a technikát használva, partíciókra osztjuk a letesztelendő feladatokat, és értékeket határozunk meg amik vagy negatívak vagy pozitívak. Ezek alapján az elvárt eredmény változik. Fontos, hogy minden érték csak 1 partícióhoz tartozhat és 1 tesztesetben nem lehet kombinálni több negatív partíciót, ezzel kiszűrve annak az esélyét, hogy 2 hibát 1-nek gondolunk\cite{syllabus2}.
+\item Határérték-elemzés : A határérték-elemzés igazából az ekvivalenciapartíció kibővítése, viszont csak numerikus vagy szekvenciális elemeket tartalmazó részeken használható. Ennél a tesztelésnél egy intervallummal rendelkezünk, amikre pozitív elvárt eredményt kapunk és minden másra pedig negatívot. A határértékek mindig ennek az intervallumnak a legkisebb és a legnagyobb eleme\cite{syllabus2}.
+\item Döntési tábla tesztelés : Ebben a teszttechnikában táblázatot hozunk létre, aminek a sorait a rendszer követelményei és az eredményezett műveletek alkotják. Minden oszlop egy döntési szabálynak felel meg, ami a feltételek egy olyan egyedi kombinációját definiálja, ami az ehhez a szabályhoz rendelt műveletek végrehajtását eredményezi\cite{syllabus2}.
+\item Állapotátmenet tesztelés : A teszttechnika használata közben a tesztelt funkció jelenlegi állapotát, az átmeneti állapotot és a következő állapota alapján kategorizáljuk. Egy állapotból több potenciális állapot lehet például egy jelszó beírása után vagy beenged az oldal vagy nem és ezek az esetek az átmeneti állapotok. Az állapotátmeneti tábla az állapotok közötti összes érvényes és potenciálisan érvénytelen átmenetet, az eseményeket, illetve az érvényes átmenetekhez tartozó végrehajtandó műveleteket ábrázolja. Az állapotátmenet diagramok általában csak az érvényes átmeneteket mutatják és kizárják az érvényteleneket\cite{syllabus2}.
+\item Használati eset tesztelés : A tesztek származtathatóak használati esetekből is, amik a szoftverelemekkel történő kölcsönhatások tervezésének speciális módjai. Egyesítik a szoftverfunkciókra vonatkozó követelményeket. A használati eseteket aktorokhoz (emberi felhasználók, külső hardver, másik komponens vagy rendszer) és tárgyakhoz (a komponens vagy rendszer, amelyre a használati esetet alkalmazzuk) kötjük\cite{syllabus2}.
+\end{itemize}
 
 \Section{Amit csak említés szintjén érdemes szerepeltetni}
 

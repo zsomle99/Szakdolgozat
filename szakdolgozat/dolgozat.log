@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.12.14)  26 APR 2022 09:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.12.14)  26 APR 2022 12:13
 entering extended mode
 **./dolgozat.tex
 (dolgozat.tex
@@ -506,6 +506,21 @@ File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 ) (dolgozat.aux
 (cover/cimlap.aux) (cover/feladatkiiras.aux) (chapters/1_introduction.aux)
 (chapters/2_concept.aux) (chapters/3_design.aux) (chapters/4_implementation.aux
+
+LaTeX Warning: Label `table:testcase' multiply defined.
+
+
+LaTeX Warning: Label `table:successcase' multiply defined.
+
+
+LaTeX Warning: Label `table:addnode' multiply defined.
+
+
+LaTeX Warning: Label `table:jtree' multiply defined.
+
+
+LaTeX Warning: Label `table:ekvivalencia' multiply defined.
+
 ) (chapters/5_test.aux) (chapters/6_summary.aux) (cover/hasznalati.aux))
 \openout1 = `dolgozat.aux'.
 
@@ -749,13 +764,7 @@ l.37 \begin{itemize}
 
 
 
-] [9]
-Overfull \hbox (16.01443pt too wide) in paragraph at lines 54--55
-\T1/cmr/m/n/12 nyek-re re-a-gál. Na-gyon gyak-ran a fel-de-rí-t® tesz-te-lést a
-l-kal-maz-zák a re-ak-tív stratégiákban[[]]. |
- []
-
-) [10]
+] [9]) [10]
 \openout2 = `chapters/4_implementation.aux'.
 
  (chapters/4_implementation.tex
@@ -771,7 +780,7 @@ Underfull \hbox (badness 1112) in paragraph at lines 26--27
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
 
  []
 
@@ -784,96 +793,96 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 ]
-Underfull \hbox (badness 4441) in paragraph at lines 103--103
+Underfull \hbox (badness 4441) in paragraph at lines 104--104
 []|\T1/cmr/m/n/12 Kattints a "New No-de"
  []
 
 
-Underfull \hbox (badness 4913) in paragraph at lines 103--103
+Underfull \hbox (badness 4913) in paragraph at lines 104--104
 []|\T1/cmr/m/n/12 3 új gomb je-le-nik meg
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--103
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
 \T1/cmr/m/n/12 ("Get In-for-ma-ti-on","Add
  []
 
 
-Underfull \hbox (badness 1303) in paragraph at lines 103--103
+Underfull \hbox (badness 1303) in paragraph at lines 104--104
 \T1/cmr/m/n/12 No-de(s)", "Back"), il-let-ve
  []
 
 
-Underfull \hbox (badness 1622) in paragraph at lines 103--103
+Underfull \hbox (badness 1622) in paragraph at lines 104--104
 \T1/cmr/m/n/12 on" gomb-ra és utá-na az
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--103
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
 []|\T1/cmr/m/n/12 A gom-bok meg-nyo-má-sa
  []
 
 
-Underfull \hbox (badness 7451) in paragraph at lines 103--103
+Underfull \hbox (badness 7451) in paragraph at lines 104--104
 \T1/cmr/m/n/12 után a fa struk-tú-rá-ban
  []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 103--103
+Underfull \hbox (badness 3168) in paragraph at lines 104--104
 \T1/cmr/m/n/12 lét-re-jön az "ér-ték" ne-v¶
  []
 
 [12] [13] [14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 262--263
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 269--269
+Underfull \hbox (badness 10000) in paragraph at lines 272--272
 []|\T1/cmr/m/n/12 Helyes fel-hasz-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--305
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--307
+Underfull \hbox (badness 10000) in paragraph at lines 309--310
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--313
+Underfull \hbox (badness 10000) in paragraph at lines 315--316
 
  []
 
 [18]
 5. fejezet.
 
-Underfull \hbox (badness 10000) in paragraph at lines 360--361
+Underfull \hbox (badness 10000) in paragraph at lines 363--364
 
  []
 
-<images/login.png, id=398, 254.45062pt x 148.30406pt>
+<images/login.png, id=404, 254.45062pt x 148.30406pt>
 File: images/login.png Graphic file (type png)
 <use images/login.png>
-Package pdftex.def Info: images/login.png  used on input line 368.
+Package pdftex.def Info: images/login.png  used on input line 371.
 (pdftex.def)             Requested size: 220.50887pt x 128.52562pt.
 [19
 
@@ -881,37 +890,37 @@ Package pdftex.def Info: images/login.png  used on input line 368.
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 [20]
-<images/opening_screen.png, id=440, 1117.17375pt x 742.27313pt>
+<images/opening_screen.png, id=446, 1117.17375pt x 742.27313pt>
 File: images/opening_screen.png Graphic file (type png)
 <use images/opening_screen.png>
-Package pdftex.def Info: images/opening_screen.png  used on input line 411.
+Package pdftex.def Info: images/opening_screen.png  used on input line 414.
 (pdftex.def)             Requested size: 396.91325pt x 263.71834pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 416--417
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
 
  []
 
-<images/tree.png, id=442, 241.65282pt x 448.67625pt>
+<images/tree.png, id=448, 241.65282pt x 448.67625pt>
 File: images/tree.png Graphic file (type png)
 <use images/tree.png>
-Package pdftex.def Info: images/tree.png  used on input line 422.
+Package pdftex.def Info: images/tree.png  used on input line 425.
 (pdftex.def)             Requested size: 94.62769pt x 175.69577pt.
 [21 <./images/opening_screen.png>]
-<images/tree_expanded.png, id=450, 243.91125pt x 473.51906pt>
+<images/tree_expanded.png, id=456, 243.91125pt x 473.51906pt>
 File: images/tree_expanded.png Graphic file (type png)
 <use images/tree_expanded.png>
-Package pdftex.def Info: images/tree_expanded.png  used on input line 431.
+Package pdftex.def Info: images/tree_expanded.png  used on input line 434.
 (pdftex.def)             Requested size: 90.49883pt x 175.69577pt.
-<images/node_buttons.png, id=453, 840.13875pt x 506.6428pt>
+<images/node_buttons.png, id=459, 840.13875pt x 506.6428pt>
 File: images/node_buttons.png Graphic file (type png)
 <use images/node_buttons.png>
-Package pdftex.def Info: images/node_buttons.png  used on input line 440.
+Package pdftex.def Info: images/node_buttons.png  used on input line 443.
 (pdftex.def)             Requested size: 291.33524pt x 175.69577pt.
  [22 <./images/tree.png> <./images/tree_expanded.png>]
-<images/modify_screen.png, id=461, 1120.185pt x 750.55406pt>
+<images/modify_screen.png, id=467, 1120.185pt x 750.55406pt>
 File: images/modify_screen.png Graphic file (type png)
 <use images/modify_screen.png>
-Package pdftex.def Info: images/modify_screen.png  used on input line 449.
+Package pdftex.def Info: images/modify_screen.png  used on input line 452.
 (pdftex.def)             Requested size: 396.91325pt x 265.93892pt.
  [23 <./images/node_buttons.png> <./images/modify_screen.png>])
 [24]
@@ -977,14 +986,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 (cover/cimlap.aux) (cover/feladatkiiras.aux) (chapters/1_introduction.aux)
 (chapters/2_concept.aux) (chapters/3_design.aux) (chapters/4_implementation.aux
 ) (chapters/5_test.aux) (chapters/6_summary.aux) (cover/hasznalati.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `dolgozat.out' has not changed.
 (rerunfilecheck)             Checksum: 35A8627FC88015B44A64AAC1D8985C8A;7368.
  ) 
 Here is how much of TeX's memory you used:
- 15423 strings out of 478864
- 220623 string characters out of 2863263
- 786036 words of memory out of 3000000
- 32811 multiletter control sequences out of 15000+600000
+ 15421 strings out of 478864
+ 220591 string characters out of 2863263
+ 785911 words of memory out of 3000000
+ 32807 multiletter control sequences out of 15000+600000
  424734 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  87i,12n,94p,911b,1908s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1005,9 +1017,9 @@ ppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc1440.pk> <C:\Users\U
 ser\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecxc2488.pk><F:/tex
 /miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><F:/tex/miktex/fonts/type1/pu
 blic/amsfonts/latxfont/lcircle1.pfb>
-Output written on dolgozat.pdf (36 pages, 581869 bytes).
+Output written on dolgozat.pdf (36 pages, 582922 bytes).
 PDF statistics:
- 1141 PDF objects out of 1200 (max. 8388607)
- 213 named destinations out of 1000 (max. 500000)
+ 1147 PDF objects out of 1200 (max. 8388607)
+ 215 named destinations out of 1000 (max. 500000)
  412 words of extra memory for PDF output out of 10000 (max. 10000000)
 

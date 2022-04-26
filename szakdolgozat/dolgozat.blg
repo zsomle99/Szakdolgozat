@@ -18,7 +18,7 @@ A level-1 auxiliary file: chapters/5_test.aux
 Reallocating 'name_of_file' (item size: 1) to 23 items.
 A level-1 auxiliary file: chapters/6_summary.aux
 Reallocating 'name_of_file' (item size: 1) to 6 items.
-The style file: plain.bst
+The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 13 items.
 Reallocating 'name_of_file' (item size: 1) to 21 items.
 A level-1 auxiliary file: cover/hasznalati.aux
@@ -28,44 +28,44 @@ Warning--entry type for "computerworld" isn't style-file defined
 Warning--entry type for "guru99" isn't style-file defined
 --line 18 of file dolgozat.bib
 You've used 6 entries,
-            2118 wiz_defined-function locations,
-            520 strings with 4473 characters,
-and the built_in function-call counts, 1338 in all, are:
-= -- 112
-> -- 66
+            1791 wiz_defined-function locations,
+            468 strings with 3998 characters,
+and the built_in function-call counts, 792 in all, are:
+= -- 50
+> -- 40
 < -- 0
-+ -- 26
-- -- 20
-* -- 52
-:= -- 223
++ -- 16
+- -- 10
+* -- 14
+:= -- 121
 add.period$ -- 12
 call.type$ -- 6
-change.case$ -- 28
+change.case$ -- 6
 chr.to.int$ -- 0
 cite$ -- 6
-duplicate$ -- 42
-empty$ -- 133
-format.name$ -- 20
-if$ -- 285
+duplicate$ -- 30
+empty$ -- 109
+format.name$ -- 10
+if$ -- 183
 int.to.chr$ -- 0
 int.to.str$ -- 6
 missing$ -- 0
 newline$ -- 27
-num.names$ -- 12
-pop$ -- 56
+num.names$ -- 6
+pop$ -- 38
 preamble$ -- 1
-purify$ -- 22
+purify$ -- 0
 quote$ -- 0
-skip$ -- 56
+skip$ -- 34
 stack$ -- 0
-substring$ -- 30
+substring$ -- 0
 swap$ -- 6
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
+type$ -- 0
 warning$ -- 0
-while$ -- 12
+while$ -- 6
 width$ -- 7
 write$ -- 48
 (There were 2 warnings)

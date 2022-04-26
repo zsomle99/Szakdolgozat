@@ -1,13 +1,13 @@
 \Chapter {Tesztelés a gyakorlatban}
-Minden teszt esethez tartoznak különböző információk, amik változnak a cég által használt rendszertől függően. Lehetséges, hogy egy teszt esetet létre tud hozni a kreálója, minden mellék információ megadása nélkül, de általában van néhány alap feltétel is amiket az én programom keretében \aref{fig:template} táblázat mutatja be.\\
+Minden teszt esethez tartoznak különböző információk, amik változnak a cég által használt rendszertől függően. Lehetséges, hogy egy teszt esetet létre tud hozni a kreálója, minden mellék információ megadása nélkül, de általában van néhány alap feltétel is amiket az én programom keretében \aref{table:template}-es táblázat mutatja be.\\
 
-\label {tab:template}
-\label {tab:testcase}
-\label {tab:successcase}
-\label {tab:addnode}
-\label {tab:jtree}
-\label {tab:ekvivalencia}
-\label {tab:kombináció}
+\label {table:template}
+\label {table:testcase}
+\label {table:successcase}
+\label {table:addnode}
+\label {table:jtree}
+\label {table:ekvivalencia}
+\label {table:kombináció}
 
 \label {tab:console}
 \label {tab:modify}
@@ -15,7 +15,7 @@ Minden teszt esethez tartoznak különböző információk, amik változnak a c�
 \label {tab:tree}
 \label {tab:login}
 
-\begin{figure} [h]
+\begin{table} [h]
 	\begin{center}
 		\begin{tabular}{ | p{6cm} | p{6cm}| } 
 			\hline
@@ -30,13 +30,14 @@ Minden teszt esethez tartoznak különböző információk, amik változnak a c�
 			Kapcsolat(ha van) & Sikertelen login teszt \\
 			\hline
 		\end{tabular}
+	\label{tab:template}
+	\caption{A teszt esethez tartozó információk.}
 	\end{center}
-\label{fig:template}
-\caption{A teszt esethez tartozó információk.}
-\end{figure}
-Minden teszt eset 3 vagy 4 oszlopból áll. Az első oszlopban a lépés sorszáma, a másodikban  maga a lépés van megfogalmazva, a harmadik és negyedik oszlop pedig az elvárt eredményt, illetve a lépéshez tartozó bemenetet tartalmazzák, viszont előfordulhat, hogy a bemeneteket egy másik táblázatban tárolják. Példát erre  \aref{fig:testcase} táblázat mutat.\\
 
-\begin{figure}[h]
+\end{table}
+Minden teszt eset 3 vagy 4 oszlopból áll. Az első oszlopban a lépés sorszáma, a másodikban  maga a lépés van megfogalmazva, a harmadik és negyedik oszlop pedig az elvárt eredményt, illetve a lépéshez tartozó bemenetet tartalmazzák, viszont előfordulhat, hogy a bemeneteket egy másik táblázatban tárolják. Példát erre  \aref{table:testcase}-es táblázat mutat.\\
+
+\begin{table}[h]
 \begin{center}
 	\resizebox{\textwidth}{!} {
 \begin{tabular}{ |p{3cm}|p{5cm}|p{5cm}|p{5cm}|} 
@@ -55,12 +56,12 @@ Minden teszt eset 3 vagy 4 oszlopból áll. Az első oszlopban a lépés sorszá
 }
 \end{center}
 	\caption{Egy teszt eset teszt lépések nélkül}
-	\label{fig:testcase}
-\end{figure}
+	\label{table:testcase}
+\end{table}
 
-\Aref{fig:successcase} táblázaton látható, az én programomhoz tartozó bejelentkezést tesztelő teszt esetnek a lépéssorozata és a hozzá tartozó bemenetek, illetve az elvárt eredmények.
+\Aref{table:successcase}-mas táblázaton látható, az én programomhoz tartozó bejelentkezést tesztelő teszt esetnek a lépéssorozata és a hozzá tartozó bemenetek, illetve az elvárt eredmények.
 
-\begin{figure} [h]
+\begin{table} [h]
 	\begin{center}
 		\resizebox{\textwidth}{!} {
 			\begin{tabular}{ |p{3cm}|p{5cm}|p{5cm}|p{5cm}| } 
@@ -79,12 +80,12 @@ Minden teszt eset 3 vagy 4 oszlopból áll. Az első oszlopban a lépés sorszá
 		}
 	\end{center}
 	\caption{A programhoz tartozó sikeres bejelentkezés teszt esete}
-	\label{fig:successcase}
-\end{figure}
+	\label{table:successcase}
+\end{table}
 
-\Aref{fig:addnode} táblázatban látható a program egyik fő funkciójának a tesztje, amivel a fa struktúrához lehet hozzáadni egy fő elemet, illetve ha szeretné a felhasználó akkor még plusz levél elemeket a fő elem alá, viszont a teszt ezt a részt már nem tartalmazza, mivel egy másik funkcionális teszt tartalmazza azt.
+\Aref{table:addnode}-es táblázatban látható a program egyik fő funkciójának a tesztje, amivel a fa struktúrához lehet hozzáadni egy fő elemet, illetve ha szeretné a felhasználó akkor még plusz levél elemeket a fő elem alá, viszont a teszt ezt a részt már nem tartalmazza, mivel egy másik funkcionális teszt tartalmazza azt.
 
-\begin{figure} [h]
+\begin{table} [h]
 	\begin{center}
 		\resizebox{\textwidth}{!} {
 			\begin{tabular}{ |p{3cm}|p{5cm}|p{5cm}|p{5cm}| } 
@@ -103,14 +104,14 @@ Minden teszt eset 3 vagy 4 oszlopból áll. Az első oszlopban a lépés sorszá
 		}
 	\end{center}
 	\caption{A fa struktúra módosítása új elem hozzáadásával}
-	\label{fig:addnode}
-\end{figure}
+	\label{table:addnode}
+\end{table}
 
 \newpage
 
-\Aref{fig:jtree} táblázatban látható a program egy másik fő funkciójára írt teszt eset. A fában lévő elemek reprezentálják a programhoz csatolt adatbázis táblaneveit és ezen táblák adatait lehet kiíratni egy kattintással. Ha duplán kattintunk, akkor is csak egyszer íródnak ki az elemek, viszont lenyílásra kerül a fában a tábla és ha a most már látható levelekre kattintunk, akkor a csak hozzá tartozó elemek kerülnek kiírásra.
+\Aref{table:jtree}-ös táblázatban látható a program egy másik fő funkciójára írt teszt eset. A fában lévő elemek reprezentálják a programhoz csatolt adatbázis táblaneveit és ezen táblák adatait lehet kiíratni egy kattintással. Ha duplán kattintunk, akkor is csak egyszer íródnak ki az elemek, viszont lenyílásra kerül a fában a tábla és ha a most már látható levelekre kattintunk, akkor a csak hozzá tartozó elemek kerülnek kiírásra.
 
-\begin{figure} [h]
+\begin{table} [h]
 	\begin{center}
 		\resizebox{\textwidth}{!} {
 			\begin{tabular}{ |p{3cm}|p{5cm}|p{5cm}|p{5cm}| } 
@@ -129,13 +130,13 @@ Minden teszt eset 3 vagy 4 oszlopból áll. Az első oszlopban a lépés sorszá
 		}
 	\end{center}
 	\caption{A fa struktúrából adat kinyerés}
-	\label{fig:jtree}
-\end{figure}
+	\label{table:jtree}
+\end{table}
 
 \Section{Fekete doboz tesztelési módszerek a gyakorlatban}
-\subsection{Ekvivalencia particionálás} \Aref{fig:ekvivalencia}-es táblázatban láthatunk egy példát az ekvivalencia particionálásra. Ez a példa a programom bejelentkező felületére hoz egy példát.
+\subsection{Ekvivalencia particionálás} \Aref{table:ekvivalencia}-es táblázatban láthatunk egy példát az ekvivalencia particionálásra. Ez a példa a programom bejelentkező felületére hoz egy példát.
 
-\begin{figure} [h]
+\begin{table} [h]
 	\begin{center}
 		\begin{tabular}{ | p{4cm} | p{4cm}|  p{4cm} |} 
 			\hline
@@ -147,12 +148,13 @@ Minden teszt eset 3 vagy 4 oszlopból áll. Az első oszlopban a lépés sorszá
 			\hline
 		\end{tabular}
 	\end{center}
-	\label{fig:ekvivalencia}
-\end{figure}
+	\label{table:ekvivalencia}
+	\caption{Példa az érvényes és érvénytelen adatokra}
+\end{table}
 \newpage
 Az alábbi táblázatban látható néhány lehetséges kombináció a bejelentkezéshez. Minden sorhoz tartozik egy felhasználó név és egy jelszó, illetve az adott kimenetel. Fontos, hogy ha egy olyan felhasználót vagy jelszót adunk meg, ami érvénytelen, ahhoz már másik érvénytelen adat ne kerüljön, ugyanis ott nem tisztázható, hogy melyik okozza a hibás működést.
 
-\begin{figure} [h]
+\begin{table} [h]
 	\begin{center}
 		\begin{tabular}{| p{3cm} | p{3cm} | p{3cm} | p{3cm} |}
 			\hline
@@ -174,7 +176,8 @@ Az alábbi táblázatban látható néhány lehetséges kombináció a bejelentk
 			\hline
 			\end{tabular}
 	\end{center}
-\end{figure}
+	\caption{Példa az ekvivalencia particionálási táblázatra}
+\end{table}
 
 \subsection{Határérték-elemzés} A programon belül a határérték elemzést bármelyik részre lehet alkalmazni, ahol numerikus megfelelés alapján történik a vizsgálat. Fontos tudni, hogy akkor is használható, ha a megfeleltetésünk nem két határ érték közé tartozik, hanem mondjuk az összes pozitív szám jó a feltétel szerint. Tipikusan hibás operátorok, vagy ciklus be és kilépési pontoknál lévő hibákat találunk meg ezzel a módszerrel. Példát a következő lista tartalmaz.
 
@@ -256,7 +259,7 @@ Létezik egy negyedik sor a táblához ami a kimenetet fogja nekünk adni. Ebben
 
 Ahol "+" jel látható, az mutatja, hogy az az adat megadásra került, viszont valamilyen hibával és így nem felel meg a kritériumnak. Minden sor 1 teszt esetet fed le, ami jelen pillanatban 8, mivel 3 bemenetünk van 2-2 fajta bemenettel és ezért a sorok száma 2*2*2 = 8 lesz.
 
-\subsection{Állapotátmenet tesztelés} Ahogy a név is sugallja, a program állapotának változása alapján nézzük, hogy minek kellene történnie és mi az ami valójában történik. Erre nagyon egyszerű példa tud lenni, egy ATM rendszer működése, viszont a programom login rendszere is megfelel a bemutatásra. \\
+\subsection{Állapotátmenet tesztelés} Ahogy a név is sugallja, a program állapotának változása alapján nézzük, hogy minek kellene történnie és mi az, ami valójában történik. Erre nagyon egyszerű példa tud lenni egy ATM rendszer működése, viszont a programom login rendszere is megfelel a bemutatásra. \\
 
 A rendszerbe bejelentkezéskor meg kell adni egy felhasználó nevet és egy jelszót. Ha a helyes jelszó és felhasználó név kombináció kerül megadásra, akkor a program beenged minket, egyéb esetben, újra kell próbálkoznunk. A maximális próbálkozások száma változhat és nem is lényeges abból a szempontból, hogy hány esélyünk van a próbálkozásoknál, hanem inkább a lényeges része az állapotok és az ott lezajló események.
 
@@ -404,7 +407,7 @@ public void actionPerformed(ActionEvent e) {
 }	
 \end{java}
 \newpage
-\section{A kezdőképernyő}	A bejelentkezés után a program kezdőképernyőjét \aref{fig:program} ábra mutatja. Ezen az ábrán lehet látni, hogy már egy lefuttatott parancs és annak az eredménye megjelent a konzolon. A program használata közben legtöbbször ezt a képernyőt látjuk.
+\section{A kezdőképernyő}	A bejelentkezés után a program kezdőképernyőjét \aref{fig:program}-es ábra mutatja. Ezen az ábrán lehet látni, hogy már egy lefuttatott parancs és annak az eredménye megjelent a konzolon. A program használata közben legtöbbször ezt a képernyőt látjuk.
 
 \begin{figure} [H]
 	\centering
@@ -433,7 +436,7 @@ Ha lenyitottuk az összes csomópontot, akkor a túl sok adat miatt, a struktúr
 	\label{fig:treeexp}
 \end{figure}
 
-\section{Fa kezelő gombok} 4 gomb látható a kezdőképernyő felső részén, amik a fa struktúra módosítására készültek. Mind a négy gombnak különböző funkciója van ezekre külön-külön kitérek. Ezek a gombok láthatóak \aref{fig:program} ábrán és ránagyítva \aref{fig:modify} ábrán.
+\section{Fa kezelő gombok} 4 gomb látható a kezdőképernyő felső részén, amik a fa struktúra módosítására készültek. Mind a négy gombnak különböző funkciója van ezekre külön-külön kitérek. Ezek a gombok láthatóak \aref{fig:program}-es ábrán és ránagyítva \aref{fig:modify} ábrán.
 
 \begin{figure} [H]
 	\centering
@@ -442,7 +445,7 @@ Ha lenyitottuk az összes csomópontot, akkor a túl sok adat miatt, a struktúr
 	\label{fig:modify}
 \end{figure}
 
-Ha az új csomópont vagy az új levél gombra kattintunk, akkor eltűnik az alap 4 gomb és \aref{fig:modify_screen} ábrán látható gombok és sorok jelennek meg.
+Ha az új csomópont vagy az új levél gombra kattintunk, akkor eltűnik az alap 4 gomb és \aref{fig:modify_screen}-os ábrán látható gombok és sorok jelennek meg.
 
 \begin{figure} [H]
 	\centering

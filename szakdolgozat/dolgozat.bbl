@@ -1,12 +1,16 @@
 \begin{thebibliography}{1}
 
-\bibitem{guru99}
-Thomas Hamilton.
-\newblock What is adhoc testing?
-
 \bibitem{syllabus}
 Meile~Posthuma Klaus~Olsen and Stephanie Ulrich.
 \newblock Official istqb® ctfl syllabus - magyar, 2018.
+
+\bibitem{computerworld}
+Molnár Richárd.
+\newblock Mit csinál a tesztelő?
+
+\bibitem{guru99}
+Thomas Hamilton.
+\newblock What is adhoc testing?
 
 \bibitem{syllabus2}
 Meile~Posthuma Klaus~Olsen and Stephanie Ulrich.
@@ -19,9 +23,5 @@ Meile~Posthuma Klaus~Olsen and Stephanie Ulrich.
 \bibitem{syllabus4}
 Meile~Posthuma Klaus~Olsen and Stephanie Ulrich.
 \newblock Official istqb® ctfl syllabus - magyar, 2018.
-
-\bibitem{computerworld}
-Molnár Richárd.
-\newblock Mit csinál a tesztelő?
 
 \end{thebibliography}
