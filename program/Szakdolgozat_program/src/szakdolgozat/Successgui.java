@@ -287,6 +287,7 @@ public class Successgui extends gui {
 			temp3 = Tnode3.getText();
 			temp4 = Tnode4.getText();
 			temp5 = Tnode5.getText();
+			
 			Tnode.setText("");
 			Tnode2.setText("");
 			Tnode3.setText("");
@@ -308,7 +309,7 @@ public class Successgui extends gui {
 				
 		}	else if (evt.getSource() == AddChildNode) {
 		
-			temp = "";
+			
 			if (Checkbox.isSelected()) {
 				if (temp.equals("")) {
 					logArea.append("Empty name field, node won't be added" + formatter.format(date)+ "\n");
