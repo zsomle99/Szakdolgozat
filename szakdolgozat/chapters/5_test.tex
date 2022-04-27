@@ -1,6 +1,6 @@
 \Chapter{Automata egység tesztelés}
 
-Az automata tesztelésről sok információ nem szerepel a szakdolgozatomban, viszont kihagyhatatlan szerepe van a unit tesztelésnek a szoftverfejlesztési ciklusban. Ezeket a teszteket általában a fejlesztők írják önmaguknak és arra a célra készülnek, hogy a lefejlesztett legkisebb egységeket tesztelje automatikusan. Általában ezzel önmagukat is szokták ellenőrizni, ugyanis ezek úgy készülnek, hogy ha a kód módisításra kerül, akkor is a helyes működést teszteljék. Ha valamelyik unit teszt nem fut le, akkor tudja a fejlesztő, hogy valamit elrontott.\\
+Az automata tesztelésről sok információ nem szerepel a szakdolgozatomban, viszont kihagyhatatlan szerepe van a unit tesztelésnek a szoftverfejlesztési ciklusban. Ezeket a teszteket általában a fejlesztők írják önmaguknak és arra a célra készülnek, hogy a lefejlesztett legkisebb egységeket tesztelje automatikusan. Általában ezzel önmagukat is szokták ellenőrizni, ugyanis ezek úgy készülnek, hogy ha a kód módosításra kerül, akkor is a helyes működést teszteljék. Ha valamelyik unit teszt nem fut le, akkor tudja a fejlesztő, hogy valamit elrontott.\\
 
 Az én programomhoz is készültek automata unit tesztek. A következő részben ezeket fogom bemutatni. A bemutatásnál találkozunk egy eddig ismeretlen szóval. Ez a JDBC, ami a Java Database Connectivity, ami magyarul a Java adatbázis-csatlakoztatás-ként fordítható. Ez felel a program és az adatbázis közötti kommunikációért.
 
@@ -28,7 +28,7 @@ final void testActionPerformed_fail() {
 }	
 \end{java}
 
-\section{Új csomópont hozzáadása} Ezzel az egység tesztel az új csomópont funkciót tesztelem. Létrehozásra kerül egy új fa struktúra az egység tesztben, és ehhez a fához ad hozzá egy új csomópontot az egység teszt. Ameddig ez a teszt sikeresen lefut, addig a funkcióval nem lesz gond a futtatás alatt. A teszt futási ideje 0,002 másodperc.
+\section{Új csomópont hozzáadása} Ezzel az egység teszttel az új csomópont funkciót tesztelem. Létrehozásra kerül egy új fa struktúra az egység tesztben, és ehhez a fához ad hozzá egy új csomópontot az egység teszt. Ameddig ez a teszt sikeresen lefut, addig a funkcióval nem lesz gond a futtatás alatt. A teszt futási ideje 0,002 másodperc.
 
 \begin{java}
 @Test
