@@ -1,0 +1,90 @@
+\Chapter{Automata egység tesztelés}
+
+Az automata tesztelésről sok információ nem szerepel a szakdolgozatomban, viszont kihagyhatatlan szerepe van a unit tesztelésnek a szoftverfejlesztési ciklusban. Ezeket a teszteket általában a fejlesztők írják önmaguknak és arra a célra készülnek, hogy a lefejlesztett legkisebb egységeket tesztelje automatikusan. Általában ezzel önmagukat is szokták ellenőrizni, ugyanis ezek úgy készülnek, hogy ha a kód módosításra kerül, akkor is a helyes működést teszteljék. Ha valamelyik unit teszt nem fut le, akkor tudja a fejlesztő, hogy valamit elrontott.\\
+
+Az én programomhoz is készültek automata unit tesztek. A következő részben ezeket fogom bemutatni. A bemutatásnál találkozunk egy eddig ismeretlen szóval. Ez a JDBC, ami a Java Database Connectivity, ami magyarul a Java adatbázis-csatlakoztatás-ként fordítható. Ez felel a program és az adatbázis közötti kommunikációért.
+
+\section{Bejelentkezés} A bejelentkezés egység tesztjét két formában is bemutatom. Az első rész az a sikeres teszt, a második rész pedig egy sikertelen teszt. A sikertelent úgy kell érteni, hogy szándékosan negatív kimenetelt várunk el. A teszt a két beviteli mezőbe beírandó felhasználó név és jelszó kombinációt megkapja és rákattint a bejelentkezés gombra. Miután a gombra rákattintunk, a program vagy beenged minket, vagy hibaüzenetet kapunk. Ez alapján eldönti az egység teszt, hogy sikeres-e vagy sem. Az első bejelentkezés futási ideje 0,163 másodperc, amíg a másodiké 0,144 másodperc.
+
+\begin{java}
+@Test
+final void testActionPerformed() {
+	gui.logingui();
+	loginusertext.setText("test");
+	loginpasswordtext.setText("test123");
+	loginButton.doClick();
+	assertEquals("Login successful",
+	LoginSuccessLabel.getText());
+}
+
+@Test
+final void testActionPerformed_fail() {
+	gui.logingui();
+	loginusertext.setText("test");
+	loginpasswordtext.setText("test1234");
+	loginButton.doClick();
+	assertEquals("Login failed. Wrong password",
+	LoginSuccessLabel.getText());
+}	
+\end{java}
+
+\section{Új csomópont hozzáadása} Ezzel az egység teszttel az új csomópont funkciót tesztelem. Létrehozásra kerül egy új fa struktúra az egység tesztben, és ehhez a fához ad hozzá egy új csomópontot az egység teszt. Ameddig ez a teszt sikeresen lefut, addig a funkcióval nem lesz gond a futtatás alatt. A teszt futási ideje 0,002 másodperc.
+
+\begin{java}
+@Test
+final void testNewParentNode() {
+	DefaultMutableTreeNode Administrator =
+	 new DefaultMutableTreeNode("Administrator");
+	DefaultMutableTreeNode Client =
+	 new DefaultMutableTreeNode("Client");
+	DefaultMutableTreeNode Email =
+	 new DefaultMutableTreeNode("Email");
+	
+	Administrator.add(Email);
+	Administrator.add(Client);
+	String name = "new";
+	
+	Jtree.tree = new JTree(Administrator);
+	Jtree.newParentNode(name);
+	assertEquals(3,Administrator.getChildCount());
+}	
+\end{java}
+
+\section{JDBC csatlakozás} A csatlakozás egység tesztje viszonylag egyszerűnek tűnik, de a kód mögött futó rész eléggé kacifántos. A megadott adatok alapján meghívja a tesztelendő funkciót, ami először összekapcsolódik az adatbázissal, majd lefuttatja a parancsot és annak az eredményét eltárolja és visszaadja, majd pedig kiírja a konzolba. Ezt a visszakapott adatot ellenőrzi le a teszt és ha megfelel az elvártnak akkor sikeres. A teszt futási ideje 0,322 másodperc
+
+\begin{java}
+@Test
+final void testJdbc() {
+	
+	String sql = "Select * from Client";
+	String column = "ID";
+	
+	logArea = new JTextArea("");
+	
+	Jtree.jdbc(sql, column);
+	
+	assertEquals("1,  2,  3,  4,  5,  "
+	 + formatter.format(date) + "\n",logArea.getText());
+	
+}	
+\end{java}
+
+\section{JDBC tábla készítés} A tábla készítés egység tesztje hasonlít a csatlakozáséra kinézetben, de a mögötte lévő kód változik. Itt is előre megadásra kerülnek az adatok, és meghívódik a tesztelendő funkció, viszont itt az eltárolt információ teljesen más, mint az előzőnél. Az itt visszajövő érték nem egész szám, hanem egy szöveg, így az kerül kiírásra, majd pedig összehasonlításra az elvárt eredménnyel. A teszt futási ideje 0,032 másodperc
+
+\begin{java}
+@Test
+@Order(5)
+final void testJdbcNodeCounterCreate() {
+	String sql = "Create table B (id int, id2 int);";
+	String command = "Create";
+	
+	logArea = new JTextArea();
+	
+	
+	Jdbc.JdbcNodeCounter(sql, command);
+	
+	assertEquals("The table was created"+
+	 formatter.format(date) + "\n",logArea.getText());
+	
+}	
+\end{java}

@@ -1,0 +1,22 @@
+\pagestyle{empty}
+
+\noindent \textbf{\Large A mellékelt CD tartalma}
+
+\vskip 1cm
+
+Ebben a fejezetben a szakdolgozathoz mellékelt CD-nek a tartalmáról és használatáról lesz szó.\\
+A CD-n található 1 \texttt{szakdolgozat.jar} nevezetű fájl, ami a program egy egyedülálló futtatható verziója. Ahhoz, hogy ezt el tudjuk indítani a következőre van szükség:
+\begin{itemize}
+	\item A java jdk 18.0.1-es verziója fel van telepítve,
+	\item A .../jdk-18.0.1/bin és .../jdk-18.0.1/lib mappákba az \newline \texttt{mssql-jdbc\_auth-10.2.0.x64.dll} nevezetű fájlt be kell másolni,
+	\item A \texttt{SzakdolgozatDB.xlsx} vagy a \texttt{Szakdolgozat.sql} fájlt be kell importálni a Microsoft SQL Server Management Studio-ba.
+\end{itemize}
+Ezek után a program gond nélkül működik. Ha másik adatbázis kezelő programot szeretnénk használni, akkor a futtatható verziót nem tudjuk használni, viszont helyette a program/Szakdolgozat\_program mappában található fejlesztő környezetben íródott verziót igen, csak át kell írni a jdbc csatlakozási paramétert arra amit szeretnénk használni.\\
+Ezeken felül még található egy \texttt{LaTeX} mappa, amiben megtalálható a szakdolgozat LateX forráskódja és egy \texttt{dolgozat.pdf} fájl, amiben a már lefordított szakdolgozat található.\\
+Tovább megtalálható egy \texttt{README} markdown file, amiben megtalálható ez az útmutató.\\
+Ha nem a futtatható verziót szeretnék használni, hanem az fejlesztő környezetben íródottat akkor a következő a teendő:
+\begin{itemize}
+	\item Az adott fejlesztő környezetet telepítsük fel (például: Eclipse, VS Code),
+	\item Importáljuk be a program/Szakdolgozat\_program mappát.
+\end{itemize}
+
